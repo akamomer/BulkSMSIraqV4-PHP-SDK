@@ -11,12 +11,39 @@ composer require akamomer/bulksmsiraq-sdk-v4
 ## Usage
 
 ```php
-use BulkSMSIraq\BulkSMSIraqV4;
+<?php
 
-$sms = new BulkSMSIraqV4('YOUR_API_KEY');
+require 'vendor/autoload.php';
 
-$response = $sms->sendSmsEnglish('9647500000000', 'YourSenderID', 'Hello from PHP SDK!');
-print_r($response);
+use  BulkSMSIraq\BulkSMSIraqV4;;
+
+// Replace 'YOUR_API_KEY_HERE' with your actual API key
+//API KEY: https://portal.verifyway.com/developers
+
+$apiKey = 'API_KEY';
+$smsClient = new BulkSMSIraqV4($apiKey);
+
+$recipientNumber = '9647xxxxxxxxx';
+//replace with your SenderID
+//https://portal.verifyway.com/senderid
+$senderId = 'SenderID';
+
+try {
+
+    // Example 2: Sending a WhatsApp message in Arabic
+    echo "\nSending WhatsApp message in Arabic...\n";
+    $whatsappResponse = $smsClient->sendWhatsAppArabic(
+        $recipientNumber,
+        $senderId,
+        '123654'
+    );
+    print_r($whatsappResponse);
+   
+} catch (\Exception $e) {
+    echo "An error occurred: " . $e->getMessage() . "\n";
+}
+
+?>
 ```
 
 ## License
