@@ -5,7 +5,7 @@ This is a lightweight PHP SDK for interacting with the Bulk SMS Iraq V4 API.
 ## Installation
 
 ```bash
-composer require yourname/bulksmsiraq-sdk-v4
+composer require akamomer/bulksmsiraq-sdk-v4
 ```
 
 ## Usage
