@@ -30,7 +30,7 @@ $senderId = 'SenderID';
 
 try {
 
-    // Example 2: Sending a WhatsApp message in Arabic
+    // Example 2: Sending a WhatsApp OTP message in Arabic
     echo "\nSending WhatsApp message in Arabic...\n";
     $whatsappResponse = $smsClient->sendWhatsAppArabic(
         $recipientNumber,
